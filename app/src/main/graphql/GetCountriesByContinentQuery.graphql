@@ -1,0 +1,16 @@
+query GetCountries {
+    continent(code: "EU") {
+        countries {
+            emoji
+            continent {
+                name
+            }
+            capital
+            phone
+            currency
+            languages {
+                name
+            }
+        }
+    }
+}
