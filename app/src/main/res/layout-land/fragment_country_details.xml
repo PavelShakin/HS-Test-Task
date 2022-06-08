@@ -28,12 +28,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDetailsHeader" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/ic_launcher_background"
+    <TextView
+        android:id="@+id/emojiFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="#FF000000"
+        android:textSize="60sp"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -42,52 +44,20 @@
         android:id="@+id/txtCountryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:textAllCaps="true"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <include
-        android:id="@+id/name"
-        layout="@layout/country_details_item"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtCountryName"
-        app:layout_constraintTop_toBottomOf="@+id/txtCountryName" />
-
-    <include
-        android:id="@+id/phone"
-        layout="@layout/country_details_item"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/language"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtCountryName"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-
-    <include
-        android:id="@+id/language"
-        layout="@layout/country_details_item"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtCountryName"
-        app:layout_constraintTop_toBottomOf="@+id/phone" />
+        app:layout_constraintTop_toBottomOf="@+id/emojiFlag" />
 
     <include
         android:id="@+id/continent"
         layout="@layout/country_details_item"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/code"
-        app:layout_constraintEnd_toEndOf="@+id/txtCountryName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCountryName" />
 
@@ -96,8 +66,8 @@
         layout="@layout/country_details_item"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_marginStart="60dp"
         app:layout_constraintBottom_toTopOf="@+id/currency"
-        app:layout_constraintEnd_toEndOf="@+id/txtCountryName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/continent" />
 
@@ -106,8 +76,39 @@
         layout="@layout/country_details_item"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_marginStart="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txtCountryName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/code" />
+
+    <include
+        android:id="@+id/name"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountryName" />
+
+    <include
+        android:id="@+id/phone"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <include
+        android:id="@+id/language"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
 </androidx.constraintlayout.widget.ConstraintLayout>
