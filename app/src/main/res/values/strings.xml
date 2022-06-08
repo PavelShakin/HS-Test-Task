@@ -2,4 +2,11 @@
     <string name="app_name">HS Test Task</string>
     <string name="txtInfo">Info</string>
     <string name="txtCountries">Countries</string>
+    <string name="txtContinent">Continent</string>
+    <string name="txtCapital">Capital</string>
+    <string name="txtCode">Code</string>
+    <string name="txtPhone">Phone</string>
+    <string name="txtPhoneSample">12–345–678</string>
+    <string name="txtCurrency">Currency</string>
+    <string name="txtLanguage">Language</string>
 </resources>
