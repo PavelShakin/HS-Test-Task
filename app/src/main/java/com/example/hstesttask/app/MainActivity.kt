@@ -1,9 +1,7 @@
-package com.example.hstesttask
+package com.example.hstesttask.app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.hstesttask.app.countries_list.CountriesListFragment
-import com.example.hstesttask.app.country_details.CountryDetailsFragment
 import com.example.hstesttask.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -14,12 +12,8 @@ class MainActivity : Hilt_MainActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        supportFragmentManager.beginTransaction()
-            .add(binding.leftFragmentContainer.id, CountriesListFragment())
-            .add(binding.rightFragmentContainer.id, CountryDetailsFragment())
-            .commit()
     }
 }
