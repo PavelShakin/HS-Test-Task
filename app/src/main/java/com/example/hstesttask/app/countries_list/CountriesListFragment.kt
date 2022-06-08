@@ -6,17 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.hstesttask.GetCountriesQuery
+import com.example.hstesttask.app.CountriesViewModel
 import com.example.hstesttask.databinding.FragmentCountriesListBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+
 @AndroidEntryPoint
-class CountriesListFragment : Fragment() {
+class CountriesListFragment : Fragment(), CountryItemCallback {
 
     private lateinit var binding: FragmentCountriesListBinding
-    private val countriesListViewModel: CountriesListViewModel by viewModels()
+
+    private val countriesListAdapter = CountriesListAdapter(this as CountryItemCallback)
+    private val countriesViewModel: CountriesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,13 +35,25 @@ class CountriesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            countriesListViewModel.getCountriesList().collect { list ->
-                list.forEach {
-                    Log.e("country", "$it\n")
+        setUpCountriesListRecycler()
 
-                }
+        viewLifecycleOwner.lifecycleScope.launch {
+            countriesViewModel.getCountriesList().collect { list ->
+                countriesListAdapter.submitList(list)
+
+                countriesViewModel.selectCountry(list[0])
             }
         }
+    }
+
+    private fun setUpCountriesListRecycler() {
+        binding.countriesRecycler.apply {
+            adapter = countriesListAdapter
+        }
+    }
+
+    //called when user click on country in list
+    override fun countrySelected(country: GetCountriesQuery.Country) {
+        countriesViewModel.selectCountry(country)
     }
 }
