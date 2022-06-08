@@ -1,6 +1,6 @@
 package com.example.hstesttask.di
 
-import com.example.hstesttask.app.countries_list.CountriesListViewModel
+import com.example.hstesttask.app.CountriesViewModel
 import com.example.hstesttask.domain.usecase.GetCountriesListUseCase
 import dagger.Module
 import dagger.Provides
@@ -12,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 object ViewModelModule {
 
     @Provides
-    fun provideCountriesListViewModel(getCountriesListUseCase: GetCountriesListUseCase): CountriesListViewModel =
-        CountriesListViewModel(getCountriesListUseCase)
+    fun provideCountriesListViewModel(getCountriesListUseCase: GetCountriesListUseCase): CountriesViewModel =
+        CountriesViewModel(getCountriesListUseCase)
 }

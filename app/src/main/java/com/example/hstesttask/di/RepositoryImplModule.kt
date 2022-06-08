@@ -13,8 +13,7 @@ object RepositoryImplModule {
 
     @Provides
     fun provideCountriesRepositoryImpl(
-        localDataSrcImpl: CountriesDatasource.Local,
         remoteDataSrcImpl: CountriesDatasource.Remote
     ): CountriesRepositoryImpl =
-        CountriesRepositoryImpl(localDataSrcImpl, remoteDataSrcImpl)
+        CountriesRepositoryImpl(remoteDataSrcImpl)
 }

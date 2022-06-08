@@ -7,8 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class CountriesRepositoryImpl @Inject constructor(
-    private val localDataSrcImpl: CountriesDatasource.Local,
-    private val remoteDataSrcImpl: CountriesDatasource.Remote,
+    private val remoteDataSrcImpl: CountriesDatasource.Remote
 ) : CountriesRepository {
 
     override fun getCountriesList(): Flow<List<GetCountriesQuery.Country>> {
