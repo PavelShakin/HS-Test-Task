@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HS Test Task</string>
+    <string name="txtInfo">Info</string>
+    <string name="txtCountries">Countries</string>
 </resources>

@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Info"
+        android:text="@string/txtInfo"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,15 +23,17 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/gray"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDetailsHeader"/>
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailsHeader" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -40,13 +42,72 @@
         android:id="@+id/txtCountryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Country"
-        android:textSize="25sp"
+        android:layout_marginTop="10dp"
         android:textAllCaps="true"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <include
+        android:id="@+id/name"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtCountryName"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountryName" />
 
+    <include
+        android:id="@+id/phone"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtCountryName"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <include
+        android:id="@+id/language"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtCountryName"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+    <include
+        android:id="@+id/continent"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/code"
+        app:layout_constraintEnd_toEndOf="@+id/txtCountryName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountryName" />
+
+    <include
+        android:id="@+id/code"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/currency"
+        app:layout_constraintEnd_toEndOf="@+id/txtCountryName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continent" />
+
+    <include
+        android:id="@+id/currency"
+        layout="@layout/country_details_item"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtCountryName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/code" />
 </androidx.constraintlayout.widget.ConstraintLayout>
